@@ -22,3 +22,12 @@ struct collectionViewModel {
     }
     
 }
+
+
+struct tableViewModel{
+    
+    var title  = "Untitled"
+    
+    var imageObjects = [collectionViewModel]()
+    
+}

@@ -13,11 +13,12 @@ private let reuseIdentifier = "Cell"
 class imageGallaryCollectionViewController: UICollectionViewController , UICollectionViewDropDelegate , UICollectionViewDelegateFlowLayout , UICollectionViewDragDelegate , cellControlDelegate
 {
     func delete(cell: imageCollectionViewCell) {
-        if let indexPath = collectionView.indexPath(for: cell){
-            collectionView.deleteItems(at: [indexPath])
+        if let indexPath = collectionView?.indexPath(for: cell){
+            collectionView?.deleteItems(at: [indexPath])
         }
     }
     
+    var sendURLsBack : (()->Void)?
     
     var imageURLs = [collectionViewModel]()
         /*{
@@ -35,7 +36,12 @@ class imageGallaryCollectionViewController: UICollectionViewController , UIColle
         super.viewDidLoad()
         collectionView?.dropDelegate = self
         collectionView?.dragDelegate = self
-        collectionView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(zoomEffect(_:))))
+        collectionView?.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(zoomEffect(_:))))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        sendURLsBack?()
     }
     
     
@@ -51,7 +57,7 @@ class imageGallaryCollectionViewController: UICollectionViewController , UIColle
     
     private var scale : CGFloat = 1.0{
         didSet{
-            collectionView.reloadData()
+            collectionView?.reloadData()
         }
     }
     
