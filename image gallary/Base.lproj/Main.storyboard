@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,12 +69,49 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="JO6-Dh-yeR" kind="showDetail" identifier="openGallary" id="NyW-hj-Muc"/>
+                        <segue destination="8h6-PW-ogi" kind="showDetail" identifier="openGallary" id="NyW-hj-Muc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2c-JN-dEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148.828125" y="132.65007320644216"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="nE5-OF-o0q">
+            <objects>
+                <viewController id="kyY-bz-Nkh" customClass="imageViewController" customModule="image_gallary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xN9-Wi-ZSj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xv-tp-K3Z">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="1326"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="1326" id="TWa-y4-Lgc"/>
+                                    <constraint firstAttribute="width" priority="250" constant="1024" id="rGO-gO-mcx"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Xv-tp-K3Z" firstAttribute="centerY" secondItem="xN9-Wi-ZSj" secondAttribute="centerY" id="2D3-0c-hny"/>
+                            <constraint firstItem="8Xv-tp-K3Z" firstAttribute="centerX" secondItem="xN9-Wi-ZSj" secondAttribute="centerX" id="CZ7-sN-XQY"/>
+                            <constraint firstItem="o26-YF-wYM" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8Xv-tp-K3Z" secondAttribute="bottom" id="XNG-iV-PFW"/>
+                            <constraint firstItem="o26-YF-wYM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8Xv-tp-K3Z" secondAttribute="trailing" id="ZKX-Qh-gTC"/>
+                            <constraint firstItem="8Xv-tp-K3Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="o26-YF-wYM" secondAttribute="leading" id="mgO-L2-eh1"/>
+                            <constraint firstItem="8Xv-tp-K3Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="o26-YF-wYM" secondAttribute="top" id="ua7-K4-oec"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o26-YF-wYM"/>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="8Xv-tp-K3Z" id="CGK-V2-ELk"/>
+                        <outlet property="scrollViewHeight" destination="TWa-y4-Lgc" id="AUb-ce-JAF"/>
+                        <outlet property="scrollViewWidth" destination="rGO-gO-mcx" id="eRd-BT-h8v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uL-Y9-h51" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578" y="374"/>
         </scene>
         <!--Image Gallary Collection View Controller-->
         <scene sceneID="htF-5g-Ac4">
@@ -111,6 +149,7 @@
                                 <size key="customSize" width="300" height="300"/>
                                 <connections>
                                     <outlet property="imageView" destination="DpB-Td-gTj" id="0sJ-om-aIv"/>
+                                    <segue destination="kyY-bz-Nkh" kind="show" identifier="showImage" id="RR2-Bs-EBi"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="placeHolderCell" id="gxY-qQ-BaO">
@@ -138,10 +177,11 @@
                             <outlet property="delegate" destination="JO6-Dh-yeR" id="3f5-w6-9jn"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="1Do-Z7-mBY"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyH-Fh-yHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-588" y="860"/>
+            <point key="canvasLocation" x="-149" y="805"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="P1X-zV-9cU">
@@ -149,7 +189,7 @@
                 <splitViewController id="KKY-fD-eRQ" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Zzp-mG-GZQ" kind="relationship" relationship="masterViewController" id="BLw-DC-ePK"/>
-                        <segue destination="JO6-Dh-yeR" kind="relationship" relationship="detailViewController" id="QaF-ru-4YZ"/>
+                        <segue destination="8h6-PW-ogi" kind="relationship" relationship="detailViewController" id="QaF-ru-4YZ"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHv-Ta-yTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +213,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7o3-9b-jO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-873.046875" y="132.65007320644216"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z38-ny-nfH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8h6-PW-ogi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Iva-ch-bK3">
+                        <rect key="frame" x="0.0" y="20" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JO6-Dh-yeR" kind="relationship" relationship="rootViewController" id="isT-Ir-w3J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76b-Am-rwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-873" y="805"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

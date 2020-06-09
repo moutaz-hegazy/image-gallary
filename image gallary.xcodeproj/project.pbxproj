@@ -14,6 +14,7 @@
 		100705ED248547D90081AB8C /* gallary model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100705EC248547D90081AB8C /* gallary model.swift */; };
 		100705EF248549770081AB8C /* imageGallaryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100705EE248549770081AB8C /* imageGallaryCollectionViewController.swift */; };
 		100705F124854C080081AB8C /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100705F024854C080081AB8C /* imageCollectionViewCell.swift */; };
+		106C903B248FEC2C0064F649 /* imageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106C903A248FEC2C0064F649 /* imageViewController.swift */; };
 		1070BC65248D2EA000A32BAB /* gallaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070BC64248D2EA000A32BAB /* gallaryTableViewCell.swift */; };
 		1070BC67248D2EC900A32BAB /* gallaryChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070BC66248D2EC900A32BAB /* gallaryChooserTableViewController.swift */; };
 		1070BC69248D496500A32BAB /* tableViewCustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070BC68248D496500A32BAB /* tableViewCustomHeader.swift */; };
@@ -29,6 +30,7 @@
 		100705EC248547D90081AB8C /* gallary model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gallary model.swift"; sourceTree = "<group>"; };
 		100705EE248549770081AB8C /* imageGallaryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageGallaryCollectionViewController.swift; sourceTree = "<group>"; };
 		100705F024854C080081AB8C /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
+		106C903A248FEC2C0064F649 /* imageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageViewController.swift; sourceTree = "<group>"; };
 		1070BC64248D2EA000A32BAB /* gallaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gallaryTableViewCell.swift; sourceTree = "<group>"; };
 		1070BC66248D2EC900A32BAB /* gallaryChooserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gallaryChooserTableViewController.swift; sourceTree = "<group>"; };
 		1070BC68248D496500A32BAB /* tableViewCustomHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCustomHeader.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				1070BC64248D2EA000A32BAB /* gallaryTableViewCell.swift */,
 				1070BC66248D2EC900A32BAB /* gallaryChooserTableViewController.swift */,
 				100705EC248547D90081AB8C /* gallary model.swift */,
+				106C903A248FEC2C0064F649 /* imageViewController.swift */,
 				100705E324853B4F0081AB8C /* Info.plist */,
 			);
 			path = "image gallary";
@@ -164,6 +167,7 @@
 				100705EF248549770081AB8C /* imageGallaryCollectionViewController.swift in Sources */,
 				100705F124854C080081AB8C /* imageCollectionViewCell.swift in Sources */,
 				1070BC67248D2EC900A32BAB /* gallaryChooserTableViewController.swift in Sources */,
+				106C903B248FEC2C0064F649 /* imageViewController.swift in Sources */,
 				100705ED248547D90081AB8C /* gallary model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

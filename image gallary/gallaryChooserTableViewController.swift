@@ -100,7 +100,7 @@ class gallaryChooserTableViewController: UITableViewController
             let location = tap.location(in: tableView)
             
             if let indexPath = tableView.indexPathForRow(at: location) ,
-                let cell = tableView.cellForRow(at: indexPath) as? gallaryTableViewCell
+                let cell = tableView.cellForRow(at: indexPath) as? gallaryTableViewCell , indexPath.section == 0
             {
                 print("wezza : trying to segue")
                 performSegue(withIdentifier: "openGallary", sender: cell)
@@ -205,10 +205,10 @@ class gallaryChooserTableViewController: UITableViewController
             print("wezza : iam in prepare for segue!")
             if segue.identifier == "openGallary"{
                 if indexPath.section == 0 ,
-                    let collectionVC = segue.destination as? imageGallaryCollectionViewController
+                    let collectionVC = segue.destination.contents as? imageGallaryCollectionViewController
                 {
                     collectionVC.imageURLs = imagesGallaries[indexPath.row].imageObjects
-                    
+                    collectionVC.title = imagesGallaries[indexPath.row].title
                     collectionVC.sendURLsBack = {
                         [weak self, unowned collectionVC] in
                         self?.imagesGallaries[indexPath.row].imageObjects = collectionVC.imageURLs
@@ -226,5 +226,17 @@ struct newNumber {
         new += 1
         return String(new)
     }
+}
+
+extension UIViewController{
+    
+    var contents : UIViewController {
+        if let navcon = self as? UINavigationController{
+            return navcon.visibleViewController ?? self
+        }else{
+            return self
+        }
+    }
+    
 }
 
